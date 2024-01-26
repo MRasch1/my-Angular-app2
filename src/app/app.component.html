@@ -1,4 +1,2 @@
-<router-outlet></router-outlet>
-<h2>Two-way Binding Example</h2>
-<input [(ngModel)]="favoriteAnimal" />
-<p>{{favoriteAnimal}}</p>
+<input type="text" #pokemonName />
+<button (click)="handleClick(pokemonName)">Confirm</button>
