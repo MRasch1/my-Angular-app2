@@ -1,0 +1,5 @@
+The commands to create modules in Angular CLI:
+
+ng generate module pokemon
+
+ng generate component pokemon/pokemon-list --module=pokemon-dashboard.module.ts
