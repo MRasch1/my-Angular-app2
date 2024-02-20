@@ -1,21 +1,41 @@
 import { Component, OnInit } from '@angular/core';
+import { Pokemon } from '../../models/pokemon';
 
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
-  styleUrl: './pokemon-list.component.css'
+  styleUrl: './pokemon-list.component.css',
 })
 export class PokemonListComponent implements OnInit {
-  pokemon: string;
+  pokemons: Pokemon[] = [
+    {
+      id: 1,
+      name: 'pikachu',
+      type: 'electric',
+      isCool: false,
+      isStylish: true,
+    },
+    {
+      id: 2,
+      name: 'squirtle',
+      type: 'water',
+      isCool: true,
+      isStylish: true,
+    },
+    {
+      id: 3,
+      name: 'charmander',
+      type: 'fire',
+      isCool: true,
+      isStylish: false,
+    },
+  ];
 
   constructor() {
-    this.pokemon ="";
+
   }
 
   ngOnInit(): void {
-    console.log("ngOninitFired");
-    this.pokemon = "";
+
   }
-
-
 }
