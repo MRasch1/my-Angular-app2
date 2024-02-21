@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pokemon } from '../../models/pokemon';
 
 @Component({
@@ -10,6 +10,8 @@ export class PokemonDetailComponent implements OnInit {
   @Input()
   detail!: Pokemon;
 
+  @Output()
+  remove: EventEmitter<any> = new EventEmitter();
 
   constructor() {
 
@@ -18,4 +20,8 @@ export class PokemonDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  onRemove() {
+    this.remove.emit(this.detail);
+  }
 }
