@@ -22,7 +22,7 @@ pokemons!: Pokemon[];
 
   ngOnInit(): void {
     this.pokemonService.getPokemons().subscribe((data:Pokemon[]) => {
-      console.log(data)
+      console.log(data);
       this.pokemons = data;
     });
   }
