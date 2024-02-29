@@ -11,7 +11,9 @@ export class PokemonTemplateFormComponent implements OnInit {
   pokemon!: Pokemon;
   constructor(private pokemonService: PokemonService) { }
 
-
+  toggleIsCool(object: any){
+    console.log(object);
+  }
 
   ngOnInit() {
     this.pokemonService.getPokemon(1).subscribe((data: Pokemon) => {
