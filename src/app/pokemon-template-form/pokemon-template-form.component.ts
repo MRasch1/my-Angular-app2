@@ -1,24 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
-import { Pokemon } from '../models/pokemon';
+import { Pokemon, PokemonType } from '../models/pokemon';
 
 @Component({
   selector: 'app-pokemon-template-form',
   templateUrl: './pokemon-template-form.component.html',
-  styleUrls: ['./pokemon-template-form.component.css']
+  styleUrls: ['./pokemon-template-form.component.css'],
 })
 export class PokemonTemplateFormComponent implements OnInit {
   pokemon!: Pokemon;
-  constructor(private pokemonService: PokemonService) { }
+  pokemonType: PokemonType[] = [
+    {
+      key: 0,
+      value: 'Fire'
+    },
+    {
+      key: 1,
+      value: 'Water'
+    },
+  ];
+  constructor(private pokemonService: PokemonService) {}
 
-  toggleIsCool(object: any){
+  toggleIsCool(object: any) {
     console.log(object);
   }
 
   ngOnInit() {
     this.pokemonService.getPokemon(1).subscribe((data: Pokemon) => {
       this.pokemon = data;
-    })
+    });
   }
-
 }
