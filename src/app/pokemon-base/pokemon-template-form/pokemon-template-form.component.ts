@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../services/pokemon.service';
-import { Pokemon, PokemonType } from '../models/pokemon';
+import { PokemonService } from '../../services/pokemon.service';
+import { Pokemon, PokemonType } from '../../models/pokemon';
 
 @Component({
   selector: 'app-pokemon-template-form',
